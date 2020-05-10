@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include 'template_blocks/head_css.html' %}
+
+        {% block extra_head %}
+        {% endblock %}
+    </head>
+    <main>
+        <body>
+        {% include 'template_blocks/navbar.html' %}
+        {% block body %}
+
+        {% block content %}
+        {% endblock content %}
+
+        {% endblock body %}
+
+        {% block extra_body %}
+        {% endblock extra_body%}
+
+        {% include 'template_blocks/footers.html' %}
+        {% include 'template_blocks/javascript.html' %}
+        {% block extra_scripts %}
+        {% endblock extra_scripts %}
+
+        </body>
+    </main>
+</html>

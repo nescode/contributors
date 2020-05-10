@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div>
+        <div class="row">
+            <p class="h6 col-md-6 col-sm-12 col-lg-4 offset-lg-4 mx-auto mb-1 text-left  font-weight-bold">
+                Fill this form to submit your request
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 col-sm-12 col-lg-6 mx-auto mt-2 mb-5">
+            <form action="{% url 'contributors:create_contributor' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group row">
+                    <label for="id_name" class="col-sm-2 col-form-label text-right">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="name" class="form-control" id="id_name" placeholder="Name" required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="id_email" class="col-sm-2 col-form-label text-right">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" name="email" class="form-control" id="id_email" placeholder="Email"
+                               required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="id_contact" class="col-sm-2 col-form-label text-right">Contact</label>
+                    <div class="col-sm-10">
+                        <input type="tel" name="phone" maxlength="13" class="form-control" id="id_contact"
+                               placeholder="Contact" required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="id_about" class="col-sm-2 col-form-label text-right">About</label>
+                    <div class="col-sm-10">
+                        <textarea maxlength="200" class="form-control" rows="4" id="id_about" name="about"
+                                  placeholder="short description about yourself" required></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="{{ name }}" class="col-sm-2 col-form-label text-right">Role</label>
+                    <div class="col-sm-10">
+
+                        {% for value, name in form.fields.role.choices %}
+                        <div class="custom-control custom-radio">
+                            <input id="{{ name }}" name="role" value="{{ value }}" type="radio"
+                                   class="form-control custom-control-input" required>
+                            <label class="custom-control-label" for="{{ name }}">{{ name }}</label>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="id_resume" class="col-sm-2 col-form-label text-right">Resume</label>
+                    <div class="col-sm-10">
+                        <input type="file" name="resume" id="id_resume" required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-10 offset-sm-2">
+                        <input type="submit" class="btn btn-primary btn-sm ml-0 mt-0">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
