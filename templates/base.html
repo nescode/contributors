@@ -7,22 +7,21 @@
         {% block extra_head %}
         {% endblock %}
     </head>
-    <body>
-    {% include 'template_blocks/navbar.html' %}
-    {% block body %}
+        <body>
+        {% include 'template_blocks/navbar.html' %}
+        {% block body %}
 
-    {% block content %}
-    {% endblock content %}
+        {% block content %}
+        {% endblock content %}
 
-    {% endblock body %}
+        {% endblock body %}
 
-    {% block extra_body %}
-    {% endblock extra_body%}
+        {% block extra_body %}
+        {% endblock extra_body%}
 
-    {% include 'template_blocks/footers.html' %}
-    {% include 'template_blocks/javascript.html' %}
-    {% block extra_scripts %}
-    {% endblock extra_scripts %}
-
+        {% include 'template_blocks/footers.html' %}
+        {% include 'template_blocks/javascript.html' %}
+        {% block extra_scripts %}
+        {% endblock extra_scripts %}
     </body>
 </html>

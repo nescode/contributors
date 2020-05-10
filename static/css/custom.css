@@ -1,16 +1,13 @@
-body { padding-top: 80px; }
+body {
+  padding-top: 80px;
+  position: relative;
+  padding-bottom: 68px;
+  min-height: 100vh;
+}
 
-
-html, body {
-    height:100%;
-    }
 footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    }
-
-.navbar-default .navbar-collapse, .navbar-default .navbar-form{
-    border-color: #e7e7e7;
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }

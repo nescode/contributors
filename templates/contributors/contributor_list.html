@@ -6,18 +6,18 @@
     <table class="table table-borderless">
         <thead>
         <tr>
-            <th scope="col" class="h4">SI NO</th>
-            <th scope="col" class="h4">Name</th>
-            <th scope="col" class="h4">Contribution</th>
+             <th style="width: 33.33%">SI NO</th>
+             <th style="width: 33.33%">Name</th>
+             <th style="width: 33.33%">Contribution</th>
         </tr>
         </thead>
         <tbody >
         <tr> {% for contributor in object_list %}
             {% if contributor.contributed %}
             <th scope="row"><a href="" class="h6">{{ forloop.counter }}</a></th>
-            <td><a class=h6 href="" data-toggle="popover" data-placement="bottom" title="{{ contributor.profession }}"
+            <td><a class=h6 href="" data-toggle="popover" data-placement="bottom" title="{{ contributor.name }}"
                    data-content="{{ contributor.about }}" data-trigger="hover">{{ contributor.name }}</a></td>
-            <td><a class=h6 href="" data-toggle="popover" data-placement="bottom" title="{{ contributor.profession }}"
+            <td><a class=h6 href="" data-toggle="popover" data-placement="bottom" title="{{ contributor.name }}"
                    data-content="{{ contributor.about }}" data-trigger="hover">{{ contributor.get_role_display }}</a></td>
         </tr>
         {% endif %}
