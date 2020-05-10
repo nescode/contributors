@@ -1,4 +1,6 @@
 from django.views import generic
+
+
 from django.urls import path
 from .views import (
             ContributorListView,

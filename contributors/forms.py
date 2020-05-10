@@ -1,5 +1,4 @@
 from django import forms
-from .models import CreateContributor
 
 
 ROLE_CHOICES = (
@@ -16,4 +15,3 @@ class ContributeForm(forms.Form):
     role = forms.ChoiceField(widget=forms.RadioSelect, choices=ROLE_CHOICES)
     about = forms.CharField(max_length=255)
     resume = forms.FileField()
-
