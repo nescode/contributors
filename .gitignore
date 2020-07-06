@@ -5,7 +5,7 @@ __pycache__/
 *$py.class
 db.sqlite3
 .idea/
-media_root/
+media/
 # C extensions
 *.so
 
