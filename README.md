@@ -1,1 +1,1 @@
-contributor app built on top of django and bootstrap
+contributor app built on top of latest django and bootstrap

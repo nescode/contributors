@@ -14,7 +14,7 @@
         <tbody >
         <tr> {% for contributor in object_list %}
             {% if contributor.contributed %}
-            <th scope="row"><a href="" class="h6">{{ forloop.counter }}</a></th>
+            <th scope="row"><a href="" class="h6">{{ forloop.counter0|add:page_obj.start_index }}</a></th>
             <td><a class=h6 href="" data-toggle="popover" data-placement="bottom" title="{{ contributor.name }}"
                    data-content="{{ contributor.about }}" data-trigger="hover">{{ contributor.name }}</a></td>
             <td><a class=h6 href="" data-toggle="popover" data-placement="bottom" title="{{ contributor.name }}"
